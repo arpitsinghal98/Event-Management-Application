@@ -8,6 +8,5 @@ public with sharing class Error_Log {
         el.Log_Date_Time__c = System.now();
 
         insert el;
-
     }
 }
