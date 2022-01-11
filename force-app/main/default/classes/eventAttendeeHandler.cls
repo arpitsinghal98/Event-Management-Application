@@ -29,7 +29,12 @@ public with sharing class eventAttendeeHandler {
         //Step-3: check if SingleEmailMessage List is not Empty and then send the required emails
         if(!mail.isEmpty()) {
 
-            Messaging.sendEmail(mail);
+            try{
+                Messaging.sendEmail(mail);
+            }
+            catch(Exception ex) {
+                
+            }
         }
     }
 }
