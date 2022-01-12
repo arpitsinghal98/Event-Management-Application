@@ -9,7 +9,7 @@ public with sharing class testGenericData {
 
             Attendee__c attendee = new Attendee__c();
             attendee.Name = 'Attendee: '+i;
-            attendee.Email__c = 'attendee'+i+'@attendee__c.com';
+            attendee.Email__c = 'attendee'+i+'@attendee.com';
             attendee.Phone__c = '987654321'+i;
             testAttendee.add(attendee);
         }
@@ -24,7 +24,7 @@ public with sharing class testGenericData {
 
             Speaker__c speaker = new Speaker__c();
             speaker.Name = 'Speaker: '+i;
-            speaker.Email__c = 'speaker'+i+'@speaker__c.com';
+            speaker.Email__c = 'speaker'+i+'@speaker.com';
             speaker.Phone__c = '987654321'+i;
             testSpeaker.add(speaker);
         }
@@ -39,7 +39,7 @@ public with sharing class testGenericData {
 
             Event_Organizer__c eventOrganizer = new Event_Organizer__c();
             eventOrganizer.Name = 'EventOrganizer: '+i;
-            eventOrganizer.Email__c = 'eventorganizer'+i+'@event_organizer__c.com';
+            eventOrganizer.Email__c = 'eventorganizer'+i+'@eventOrganizer.com';
             eventOrganizer.Phone__c = '987654321'+i;
             testEventOrganizer.add(eventOrganizer);
         }
@@ -54,7 +54,12 @@ public with sharing class testGenericData {
 
             Event__c event = new Event__c();
             event.Name = 'Event: '+i;
-            event.Event_Organizer__c = eventOrganizer[i].Id;
+            if(eventOrganizer.size() !=1) {
+                event.Event_Organizer__c = eventOrganizer[i].Id;
+            }
+            else {
+                event.Event_Organizer__c = eventOrganizer[0].Id;
+            }
             event.Start_Date_Time__c = System.now().addDays(i);
             event.End_Date_Time__c = System.now().addDays(i+7);
             event.Max_Seats__c = 40;
@@ -73,8 +78,18 @@ public with sharing class testGenericData {
 
             Event_Attendee__c eventAttendee = new Event_Attendee__c();
             eventAttendee.Name = 'EventAttendee: '+i;
-            eventAttendee.Attendee__c = attendee[i].Id;
-            eventAttendee.Event__c = event[i].Id;
+            if(attendee.size() !=1) {
+                eventAttendee.Attendee__c = attendee[i].Id;
+            }
+            else {
+                eventAttendee.Attendee__c = attendee[0].Id;
+            }
+            if(event.size() !=1) {
+                eventAttendee.Event__c = event[i].Id;
+            }
+            else {
+                eventAttendee.Event__c = event[0].Id;
+            }
             testEventAttendee.add(eventAttendee);
         }
         return testEventAttendee;
@@ -88,8 +103,18 @@ public with sharing class testGenericData {
 
             Event_Speaker__c eventSpeaker = new Event_Speaker__c();
             eventSpeaker.Name = 'EventSpeaker: '+i;
-            eventSpeaker.Speaker__c = speaker[i].Id;
-            eventSpeaker.Event__c = event[i].Id;
+            if(speaker.size() !=1) {
+                eventSpeaker.Speaker__c = speaker[i].Id;
+            }
+            else {
+                eventSpeaker.Speaker__c = speaker[0].Id;
+            }
+            if(event.size() !=1) {
+                eventSpeaker.Event__c = event[i].Id;
+            }
+            else {
+                eventSpeaker.Event__c = event[0].Id;
+            }
             testEventSpeaker.add(eventSpeaker);
         }
         return testEventSpeaker;

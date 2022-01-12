@@ -27,7 +27,7 @@ public with sharing class eventSpeakerHandler {
 
                 if(newEventSpeaker.Speaker__c == duplicateEventSpeaker.Speaker__c && myAllEventMap.get(newEventSpeaker.Event__c).Start_Date_Time__c <= duplicateEventSpeaker.Event__r.End_Date_Time__c) {
 
-                    newEventSpeaker.addError('Speaker already have a Live Event between: '+duplicateEventSpeaker.Event__r.Start_Date_Time__c + ' to '+duplicateEventSpeaker.Event__r.End_Date_Time__c);
+                    newEventSpeaker.addError('Speaker already have a Live Event between: "'+duplicateEventSpeaker.Event__r.Start_Date_Time__c + '" to "'+duplicateEventSpeaker.Event__r.End_Date_Time__c+'"');
                 }
             }
         }
