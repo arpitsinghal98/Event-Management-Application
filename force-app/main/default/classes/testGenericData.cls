@@ -7,10 +7,12 @@ public with sharing class testGenericData {
 
         for(Integer i=0; i<n; i++) {
 
+            Double randomphoneNumber = math.random()*1000000000;
+            String phoneNumber = String.valueOf(randomphoneNumber);
             Attendee__c attendee = new Attendee__c();
             attendee.Name = 'Attendee: '+i;
             attendee.Email__c = 'attendee'+i+'@attendee.com';
-            attendee.Phone__c = '987654321'+i;
+            attendee.Phone__c = phoneNumber;
             testAttendee.add(attendee);
         }
         return testAttendee;
@@ -22,10 +24,12 @@ public with sharing class testGenericData {
 
         for(Integer i=0; i<n; i++) {
 
+            Double randomphoneNumber = math.random()*1000000000;
+            String phoneNumber = String.valueOf(randomphoneNumber);
             Speaker__c speaker = new Speaker__c();
             speaker.Name = 'Speaker: '+i;
             speaker.Email__c = 'speaker'+i+'@speaker.com';
-            speaker.Phone__c = '987654321'+i;
+            speaker.Phone__c = phoneNumber;
             testSpeaker.add(speaker);
         }
         return testSpeaker;
@@ -37,10 +41,12 @@ public with sharing class testGenericData {
 
         for(Integer i=0; i<n; i++) {
 
+            Double randomphoneNumber = math.random()*1000000000;
+            String phoneNumber = String.valueOf(randomphoneNumber);
             Event_Organizer__c eventOrganizer = new Event_Organizer__c();
             eventOrganizer.Name = 'EventOrganizer: '+i;
             eventOrganizer.Email__c = 'eventorganizer'+i+'@eventOrganizer.com';
-            eventOrganizer.Phone__c = '987654321'+i;
+            eventOrganizer.Phone__c = phoneNumber;
             testEventOrganizer.add(eventOrganizer);
         }
         return testEventOrganizer;

@@ -4,17 +4,20 @@ public with sharing class testDeleteOldEvent {
     @isTest
     static void testDeleteOldEvent() {
 
-        List<Event_Organizer__c> eventOrganizer = testGenericData.createEventOrganizer(1);
+        List<Event_Organizer__c> eventOrganizer = testGenericData.createEventOrganizer(199);
         insert eventOrganizer;
 
-        List<Event__c> event = testGenericData.createEvent(1, eventOrganizer);
+        List<Event__c> event = testGenericData.createEvent(199, eventOrganizer);
         insert event;
         
-        Event__c updateEvent = [SELECT Id, Name, Live__c, End_Date_Time__c from Event__c WHERE Id =: event[0].Id];
-        updateEvent.Live__c = TRUE;
-        updateEvent.Start_Date_Time__c = System.now().addDays(-80);
-        updateEvent.End_Date_Time__c = System.now().addDays(-70);
-        update updateEvent;
+        List<Event__c> updateMyEvent = new List<Event__c>();
+        for(Event__c updateEvent: [SELECT Id, Name, Live__c, Start_Date_Time__c, End_Date_Time__c from Event__c WHERE Id =: event]) {
+            updateEvent.Live__c = TRUE;
+            updateEvent.Start_Date_Time__c = System.now().addDays(-80);
+            updateEvent.End_Date_Time__c = System.now().addDays(-70);
+            updateMyEvent.add(updateEvent);
+        }
+        update updateMyEvent;
 
         Test.startTest();
 
