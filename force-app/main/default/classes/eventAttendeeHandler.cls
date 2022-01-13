@@ -33,7 +33,7 @@ public with sharing class eventAttendeeHandler {
                 Messaging.sendEmail(mail);
             }
             catch(Exception ex) {
-                
+                Error_Log.Error_Log(ex, 'eventAttendeeHandler');
             }
         }
     }

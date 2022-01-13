@@ -9,4 +9,14 @@ public with sharing class Error_Log {
 
         insert el;
     }
+
+    public static void Error_Log_1(String ex, String Name) {
+
+        Error_Log__c el = new Error_Log__c();
+        el.Name = Name;
+        el.Log_Details__c = ex;
+        el.Log_Date_Time__c = System.now();
+
+        insert el;
+    }
 }
