@@ -125,4 +125,22 @@ public with sharing class testGenericData {
         }
         return testEventSpeaker;
     }
+
+    public static List<Location__c> createLocation(Integer n) {
+        
+        List<Location__c> testLocation = new List<Location__c>();
+
+        for(Integer i=0; i<n; i++) {
+
+            Location__c location = new Location__c();
+            location.Name = 'Location: '+i;
+            location.Street__c = 'Street: '+i;
+            location.City__c = 'City: '+i;
+            location.State__c = 'State: '+i;
+            location.Country__c = 'India';
+            location.Postal_code__c = String.valueOf(Math.random()*100000);
+            testLocation.add(location);
+        }
+        return testLocation;
+    }
 }
