@@ -1,18 +1,48 @@
-# Salesforce DX Project: Next Steps
+# MAX FIT Event Management System
 
-Now that you’ve created a Salesforce DX project, what’s next? Here are some documentation resources to get you started.
+Welcome to the MAX FIT Event Management System! This project aims to provide a comprehensive solution for managing events, locations, organizers, attendees, and speakers using Salesforce. It's designed for students and professionals looking to gain real-world Salesforce experience.
 
-## How Do You Plan to Deploy Your Changes?
+## Project Overview
 
-Do you want to deploy a set of changes, or create a self-contained application? Choose a [development model](https://developer.salesforce.com/tools/vscode/en/user-guide/development-models).
+The project includes both administrative and development components, offering a full spectrum of Salesforce capabilities:
 
-## Configure Your Salesforce DX Project
+### Salesforce Administration
 
-The `sfdx-project.json` file contains useful configuration information for your project. See [Salesforce DX Project Configuration](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_ws_config.htm) in the _Salesforce DX Developer Guide_ for details about this file.
+- **Objects & Relationships**: Create and manage custom objects and relationships to support various business processes.
+- **Sharing Rules, OWD & Roles**: Configure organization-wide defaults, sharing rules, and roles to secure data access.
+- **Community**: Set up Salesforce Community for customer engagement, including login, registration, and profile management.
 
-## Read All About It
+### Salesforce Development
 
-- [Salesforce Extensions Documentation](https://developer.salesforce.com/tools/vscode/)
-- [Salesforce CLI Setup Guide](https://developer.salesforce.com/docs/atlas.en-us.sfdx_setup.meta/sfdx_setup/sfdx_setup_intro.htm)
-- [Salesforce DX Developer Guide](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_intro.htm)
-- [Salesforce CLI Command Reference](https://developer.salesforce.com/docs/atlas.en-us.sfdx_cli_reference.meta/sfdx_cli_reference/cli_reference.htm)
+- **Apex Trigger**: Automate business logic and ensure data integrity through triggers.
+- **Apex Batch Apex**: Process large volumes of data asynchronously using batch Apex.
+- **Future Method**: Implement future methods for asynchronous operations.
+- **Integration (Apex REST & REST API)**: Integrate with external systems using Apex REST services and REST API.
+- **Lightning Web Component (LWC)**: Develop responsive and dynamic user interfaces with LWCs, covering events, custom lookups, and more.
+
+### Additional Features
+
+- **Reusable Error Handling Framework**: Implement a framework for consistent error logging and handling.
+- **Salesforce Community**: Utilize Salesforce Community for engaging with users, managing profiles, and navigation.
+
+## Key Features of the Event Management System
+
+- **Event Management**: Comprehensive management of event details, including dates, locations, and capacities.
+- **Attendee and Speaker Management**: Track and manage attendees and speakers for events.
+- **Location Verification**: Utilize SmartyStreets API for verifying event location addresses.
+- **Validation and Duplicate Rules**: Ensure data accuracy and prevent duplicates.
+- **Role-Based Access Control**: Manage permissions for different roles, including Event Organizer, Attendee, and Speaker.
+
+## Usage
+
+- **Creating Events**: Use the provided LWCs to manage event details.
+- **Managing Attendees**: Efficiently track attendees and their engagement with events.
+- **Viewing Event Details**: Leverage LWCs to access detailed event information, organized into tabs.
+
+## Testing
+
+- Ensure all code is well-tested with at least 90% coverage, using @TestSetup annotations and TestUtility classes.
+
+## Acknowledgments
+
+I extend my gratitude to [@amitastreait](https://github.com/amitastreait) for providing this project, which has been invaluable in enhancing my Salesforce skills.
