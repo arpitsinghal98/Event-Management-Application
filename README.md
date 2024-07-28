@@ -45,4 +45,4 @@ The project includes both administrative and development components, offering a 
 
 ## Acknowledgments
 
-I extend my gratitude to [@amitastreait](https://github.com/amitastreait) for providing this project, which has been invaluable in enhancing my Salesforce skills.
+I extend my gratitude to [@amitastreait](https://github.com/amitastreait) for providing the foundational content for this project, which has been invaluable in enhancing my Salesforce skills.
